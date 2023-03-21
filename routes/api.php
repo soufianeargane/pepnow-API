@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PlantController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +31,9 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::post('password-reset/{token}',[AuthController::class, 'updatePassword']);
+
+// api resources on categories
+Route::apiResource('categories', CategoryController::class);
+// api resources on plants
+Route::apiResource('plants', PlantController::class);
+
